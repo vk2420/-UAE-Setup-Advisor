@@ -1,0 +1,203 @@
+{
+  "_meta": {
+    "description": "Business activity catalog. Each entry maps a common activity type to its licensing constraints. This drives the DETERMINISTIC eligibility engine. Edit this file to change rules; do not hardcode activity logic in application code.",
+    "last_reviewed": "2026-01",
+    "disclaimer": "Directional guidance only. UAE licensing categories are granular (thousands of DED/free-zone activity codes). These are simplified buckets for MVP triage. Confirm the exact activity code and its rules with the relevant authority or a licensed corporate services provider.",
+    "field_docs": {
+      "mainland_required": "true = this activity generally cannot be conducted for the UAE local market from a free zone and needs a mainland (DED) licence or a mainland branch.",
+      "free_zone_eligible": "true = a free zone licence can be issued for this activity (typically for international / B2B / non-local-market operations).",
+      "serves_local_market_directly": "true = the business model inherently requires selling/serving the UAE onshore public directly (storefront, local clients, physical services on mainland).",
+      "regulated": "true = a sector-specific regulator (e.g. DHA/MOH, RERA, Central Bank, DFSA/FSRA) must license the activity in addition to the trade licence.",
+      "categories": "Tags used to match against free-zone specializations."
+    }
+  },
+  "activities": [
+    {
+      "id": "general_trading",
+      "label": "General Trading (import / export / distribution)",
+      "categories": ["trading", "general"],
+      "mainland_required": false,
+      "free_zone_eligible": true,
+      "serves_local_market_directly": false,
+      "regulated": false,
+      "notes": "Free zone general trading is ideal for international import/export and re-export. Selling directly into the UAE mainland market requires a mainland distributor/agent or a dual (mainland) licence, because free zone companies cannot invoice onshore customers directly.",
+      "source": "UAE Ministry of Economy / free zone authority general trading licence guidance"
+    },
+    {
+      "id": "commodities_trading",
+      "label": "Commodities Trading (gold, diamonds, metals, tea, coffee, agri)",
+      "categories": ["trading", "commodities"],
+      "mainland_required": false,
+      "free_zone_eligible": true,
+      "serves_local_market_directly": false,
+      "regulated": false,
+      "notes": "Commodities trading is strongly associated with DMCC, which provides commodity-specific infrastructure (vaults, exchanges, DMCC Tradeflow).",
+      "source": "DMCC member activity guidance"
+    },
+    {
+      "id": "it_software",
+      "label": "IT / Software Development / SaaS",
+      "categories": ["tech", "services", "general"],
+      "mainland_required": false,
+      "free_zone_eligible": true,
+      "serves_local_market_directly": false,
+      "regulated": false,
+      "notes": "Fully free-zone eligible. Tech clusters (Dubai Internet City) add ecosystem value; low-cost zones work fine for bootstrapped software teams.",
+      "source": "TECOM / Dubai Internet City licensing"
+    },
+    {
+      "id": "ecommerce",
+      "label": "E-commerce (online retail / marketplace)",
+      "categories": ["trading", "ecommerce", "general"],
+      "mainland_required": false,
+      "free_zone_eligible": true,
+      "serves_local_market_directly": false,
+      "regulated": false,
+      "notes": "E-commerce can be free-zone licensed. To hold local stock and deliver to UAE customers at scale, most operators pair the free zone company with local fulfilment/logistics or a mainland presence. Cross-border / dropshipping models fit free zones cleanly.",
+      "source": "Free zone e-commerce package guidance"
+    },
+    {
+      "id": "consulting_professional",
+      "label": "Management / Professional Consulting",
+      "categories": ["services", "professional", "general"],
+      "mainland_required": false,
+      "free_zone_eligible": true,
+      "serves_local_market_directly": false,
+      "regulated": false,
+      "notes": "Consultancy is one of the most flexible licence types. Free zone consultancies can serve international and (in practice, project-based) UAE clients; ongoing onshore commercial activity may require a mainland licence.",
+      "source": "DED professional licence / free zone consultancy guidance"
+    },
+    {
+      "id": "media_marketing",
+      "label": "Media / Advertising / Marketing / Content",
+      "categories": ["media", "creative", "services"],
+      "mainland_required": false,
+      "free_zone_eligible": true,
+      "serves_local_market_directly": false,
+      "regulated": false,
+      "notes": "Media and marketing are well served by media-focused free zones (SHAMS, Dubai Media City). Certain media/publishing content is subject to UAE Media Council content rules.",
+      "source": "Sharjah Media City (SHAMS) / Dubai Media City guidance"
+    },
+    {
+      "id": "freelance_creative",
+      "label": "Freelancer (designer, writer, developer, consultant)",
+      "categories": ["freelance", "creative", "services", "general"],
+      "mainland_required": false,
+      "free_zone_eligible": true,
+      "serves_local_market_directly": false,
+      "regulated": false,
+      "notes": "Free zone freelance permits are the cheapest legal route for solo operators. Typically limited to a single named permit-holder and a defined activity, with limited or no separate visa allocation on the base package.",
+      "source": "SHAMS / IFZA / RAKEZ freelance permit guidance"
+    },
+    {
+      "id": "financial_services",
+      "label": "Financial Services (asset management, brokerage, fintech, advisory)",
+      "categories": ["finance", "professional"],
+      "mainland_required": false,
+      "free_zone_eligible": true,
+      "serves_local_market_directly": false,
+      "regulated": true,
+      "notes": "Regulated activity. Financial services cluster in DIFC (DFSA) and ADGM (FSRA), which operate independent common-law frameworks. Onshore financial services fall under the UAE Central Bank / SCA. Regulatory approval is separate from and additional to the trade licence.",
+      "source": "DIFC / DFSA and ADGM / FSRA regulatory frameworks"
+    },
+    {
+      "id": "manufacturing_light",
+      "label": "Light Manufacturing / Assembly / Production",
+      "categories": ["industrial", "manufacturing", "trading"],
+      "mainland_required": false,
+      "free_zone_eligible": true,
+      "serves_local_market_directly": false,
+      "regulated": false,
+      "notes": "Industrial free zones (RAKEZ, Dubai South, KIZAD) provide warehousing and industrial land at lower cost. Selling finished goods into the UAE mainland market still requires a distributor or mainland channel.",
+      "source": "RAKEZ industrial / Dubai South logistics guidance"
+    },
+    {
+      "id": "logistics_freight",
+      "label": "Logistics / Freight / Warehousing",
+      "categories": ["logistics", "industrial", "trading"],
+      "mainland_required": false,
+      "free_zone_eligible": true,
+      "serves_local_market_directly": false,
+      "regulated": false,
+      "notes": "Airport- and port-adjacent free zones (DAFZA, Dubai South) are purpose-built for logistics. Last-mile domestic distribution into the mainland typically needs mainland transport permits or a local partner.",
+      "source": "DAFZA / Dubai South logistics guidance"
+    },
+    {
+      "id": "education_training",
+      "label": "Training / Education Services (non-academic)",
+      "categories": ["education", "services"],
+      "mainland_required": false,
+      "free_zone_eligible": true,
+      "serves_local_market_directly": false,
+      "regulated": true,
+      "notes": "Corporate training and professional development can be free-zone licensed. Formal academic institutions and accredited schools require sector regulator approval (KHDA in Dubai) and are often mainland/regulated.",
+      "source": "KHDA / free zone training licence guidance"
+    },
+    {
+      "id": "retail_shop",
+      "label": "Retail Shop (physical storefront to UAE public)",
+      "categories": ["retail", "trading"],
+      "mainland_required": true,
+      "free_zone_eligible": false,
+      "serves_local_market_directly": true,
+      "regulated": false,
+      "notes": "A physical shop selling directly to the UAE public must be on the mainland (DED licence) or inside a designated retail/mall environment. Free zones cannot open a general onshore retail storefront for walk-in local customers.",
+      "source": "DED commercial (retail) licence guidance"
+    },
+    {
+      "id": "restaurant_fnb",
+      "label": "Restaurant / Cafe / Food & Beverage",
+      "categories": ["fnb", "retail"],
+      "mainland_required": true,
+      "free_zone_eligible": false,
+      "serves_local_market_directly": true,
+      "regulated": true,
+      "notes": "F&B outlets serving the public need a mainland trade licence plus food-safety and municipality approvals. (Food kiosks inside a specific free zone community are the narrow exception and out of MVP scope.)",
+      "source": "DED / Dubai Municipality food establishment licensing"
+    },
+    {
+      "id": "real_estate_brokerage",
+      "label": "Real Estate Brokerage / Property Services",
+      "categories": ["real_estate", "services"],
+      "mainland_required": true,
+      "free_zone_eligible": false,
+      "serves_local_market_directly": true,
+      "regulated": true,
+      "notes": "Brokering UAE onshore property is a mainland activity requiring DED licensing and RERA registration (in Dubai). Free zones cannot license onshore real estate brokerage.",
+      "source": "Dubai Land Department / RERA broker registration"
+    },
+    {
+      "id": "construction_contracting",
+      "label": "Construction / Contracting / Fit-out",
+      "categories": ["construction", "industrial", "services"],
+      "mainland_required": true,
+      "free_zone_eligible": false,
+      "serves_local_market_directly": true,
+      "regulated": true,
+      "notes": "On-site construction and contracting on the mainland require a mainland licence plus municipality/civil-defence approvals and contractor classification. Free zone licences do not authorise onshore construction work.",
+      "source": "DED contracting licence / Dubai Municipality classification"
+    },
+    {
+      "id": "healthcare_clinic",
+      "label": "Healthcare Clinic / Medical Services",
+      "categories": ["healthcare", "services"],
+      "mainland_required": true,
+      "free_zone_eligible": false,
+      "serves_local_market_directly": true,
+      "regulated": true,
+      "notes": "Clinics treating the public need health-regulator licensing (DHA in Dubai, DoH in Abu Dhabi, MOHAP federally). A dedicated healthcare free zone (Dubai Healthcare City) exists but is outside the MVP free-zone set, so this engine routes healthcare to mainland/regulated.",
+      "source": "DHA / DoH / MOHAP facility licensing"
+    },
+    {
+      "id": "legal_services",
+      "label": "Legal Services / Law Firm",
+      "categories": ["legal", "professional", "services"],
+      "mainland_required": true,
+      "free_zone_eligible": false,
+      "serves_local_market_directly": true,
+      "regulated": true,
+      "notes": "Litigation and advocacy before UAE onshore courts require a mainland licence and bar admission. Legal CONSULTANCY (non-advocacy) can be licensed in DIFC/ADGM under their own frameworks, but general legal practice for the onshore market is mainland.",
+      "source": "Ministry of Justice / DIFC & ADGM legal frameworks"
+    }
+  ]
+}
