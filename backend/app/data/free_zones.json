@@ -30,6 +30,7 @@
       "cons": ["Sold mainly through agents (price varies)", "Less industry-specific ecosystem"],
       "target_company_size": "Solo founders to small teams",
       "url": "https://www.ifza.com",
+      "last_verified": "2026-08",
       "source": "IFZA published package pricing, cross-checked Aug 2026 (approximate)"
     },
     {
@@ -47,6 +48,7 @@
       "cons": ["Sharjah (not Dubai) address", "Thin visa allocation on base package"],
       "target_company_size": "Freelancers and micro businesses",
       "url": "https://www.shams.ae",
+      "last_verified": "2026-08",
       "source": "SHAMS published package pricing, cross-checked Aug 2026 (approximate)"
     },
     {
@@ -64,6 +66,7 @@
       "cons": ["Add-ons raise the effective price", "General-purpose (no deep sector ecosystem)"],
       "target_company_size": "Small businesses and e-commerce",
       "url": "https://www.meydanfz.ae",
+      "last_verified": "2026-08",
       "source": "Meydan Free Zone published package pricing, cross-checked Aug 2026 (approximate)"
     },
     {
@@ -81,6 +84,7 @@
       "cons": ["Premium pricing once you add a real office", "More documentation and compliance overhead"],
       "target_company_size": "Growth-stage trading and commodity firms",
       "url": "https://www.dmcc.ae",
+      "last_verified": "2026-08",
       "source": "DMCC published package pricing, cross-checked Aug 2026 (approximate)"
     },
     {
@@ -98,6 +102,7 @@
       "cons": ["High cost for regulated/standard commercial firms", "Regulatory (DFSA) approval process is demanding"],
       "target_company_size": "Funded fintech and financial institutions (plus subsidised tech startups)",
       "url": "https://www.difc.com",
+      "last_verified": "2026-08",
       "source": "DIFC published pricing / Innovation Licence, cross-checked Aug 2026 (approximate)"
     },
     {
@@ -115,6 +120,7 @@
       "cons": ["Premium cost for regulated firms", "Abu Dhabi base may not suit Dubai-centric teams"],
       "target_company_size": "Funded fintech, asset managers, financial institutions (plus subsidised tech startups)",
       "url": "https://www.adgm.com",
+      "last_verified": "2026-08",
       "source": "ADGM published pricing / Tech Startup Licence, cross-checked Aug 2026 (approximate)"
     },
     {
@@ -132,6 +138,7 @@
       "cons": ["Pricier than generic low-cost zones", "Best value only if you use the ecosystem"],
       "target_company_size": "Tech startups to scale-ups",
       "url": "https://dic.ae",
+      "last_verified": "2026-08",
       "source": "TECOM / Dubai Internet City pricing, cross-checked Aug 2026 (approximate)"
     },
     {
@@ -149,6 +156,7 @@
       "cons": ["Ras Al Khaimah base (further from Dubai)", "Less prestige for client-facing services"],
       "target_company_size": "SMEs, manufacturers, cost-sensitive founders",
       "url": "https://rakez.com",
+      "last_verified": "2026-08",
       "source": "RAKEZ published package pricing, cross-checked Aug 2026 (approximate)"
     },
     {
@@ -166,6 +174,7 @@
       "cons": ["Higher cost than inland zones", "Overkill for pure services businesses"],
       "target_company_size": "Trading and logistics firms with cargo needs",
       "url": "https://www.dafz.ae",
+      "last_verified": "2026-08",
       "source": "DAFZA published pricing, cross-checked Aug 2026 (approximate)"
     },
     {
@@ -183,6 +192,7 @@
       "cons": ["Located in Dubai's southern outskirts", "Ecosystem still maturing vs central zones"],
       "target_company_size": "Logistics, e-commerce and light-industrial SMEs",
       "url": "https://www.dubaisouth.ae",
+      "last_verified": "2026-08",
       "source": "Dubai South published pricing, cross-checked Aug 2026 (approximate)"
     }
   ]

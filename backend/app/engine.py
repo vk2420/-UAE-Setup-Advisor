@@ -376,6 +376,7 @@ def _rank_zones(
             pros=list(zone.get("pros", [])),
             cons=list(zone.get("cons", [])),
             url=zone.get("url", ""),
+            last_verified=zone.get("last_verified"),
         )
         # Sort key: score desc, then overlap desc, then cheaper first-year cost.
         scored.append((score, overlap, rec))

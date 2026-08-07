@@ -54,6 +54,7 @@ export interface ZoneRecommendation {
   pros: string[];
   cons: string[];
   url: string;
+  last_verified: string | null;
 }
 
 export interface Explanation {

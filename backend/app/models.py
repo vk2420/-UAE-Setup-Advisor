@@ -103,6 +103,7 @@ class ZoneRecommendation:
     pros: list[str]
     cons: list[str]
     url: str
+    last_verified: Optional[str] = None     # e.g. "2026-08" — when the pricing was last checked
 
 
 @dataclass

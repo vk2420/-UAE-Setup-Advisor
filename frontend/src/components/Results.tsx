@@ -2,6 +2,15 @@ import type { EvaluateResult, Reason, ZoneRecommendation } from "../lib/api";
 
 const aed = (n: number) => `AED ${n.toLocaleString()}`;
 
+// "2026-08" -> "Aug 2026"
+function fmtVerified(s: string | null): string | null {
+  if (!s) return null;
+  const [y, m] = s.split("-").map(Number);
+  if (!y || !m) return s;
+  const month = new Date(y, m - 1, 1).toLocaleString("en", { month: "short" });
+  return `${month} ${y}`;
+}
+
 function ReasonList({ reasons }: { reasons: Reason[] }) {
   return (
     <ul className="space-y-2">
@@ -76,6 +85,18 @@ function ZoneCard({ zone, rank }: { zone: ZoneRecommendation; rank: number }) {
           </tr>
         </tbody>
       </table>
+
+      <div className="mt-2 flex flex-wrap items-center gap-1.5">
+        <span className="rounded bg-amber-50 px-1.5 py-0.5 text-[10px] font-medium text-amber-700">
+          ≈ Estimate
+        </span>
+        {fmtVerified(zone.last_verified) && (
+          <span className="text-[10px] text-gray-400">
+            pricing verified {fmtVerified(zone.last_verified)} · confirm with the
+            authority
+          </span>
+        )}
+      </div>
 
       <p className="mt-3 text-xs text-gray-600">
         <span className="font-medium text-gray-700">Visas: </span>
@@ -160,9 +181,15 @@ export default function Results({ result }: { result: EvaluateResult }) {
 
       {isFreeZone && result.zone_shortlist.length > 0 && (
         <div>
-          <h3 className="mb-3 text-sm font-semibold text-gray-800">
-            Ranked free zones
-          </h3>
+          <div className="mb-3">
+            <h3 className="text-sm font-semibold text-gray-800">
+              Ranked free zones
+            </h3>
+            <p className="text-xs text-gray-400">
+              Costs are approximate 2026 bands, not live quotes — always confirm a
+              written quote with the zone authority.
+            </p>
+          </div>
           <div className="grid gap-4 md:grid-cols-2">
             {result.zone_shortlist.map((z, i) => (
               <ZoneCard key={z.zone_id} zone={z} rank={i + 1} />

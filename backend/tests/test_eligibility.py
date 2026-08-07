@@ -57,6 +57,19 @@ class TestKnowledgeBase:
         with pytest.raises(KeyError):
             knowledge.get_activity("does_not_exist")
 
+    def test_all_zones_have_last_verified(self):
+        # data-freshness field, surfaced in the UI, so visitors can judge staleness
+        for z in knowledge.load_free_zones():
+            assert z.get("last_verified"), f"zone {z['id']} missing last_verified"
+
+
+class TestDataFreshness:
+    def test_shortlist_carries_last_verified(self):
+        result = evaluate(BusinessProfile(activity_id="commodities_trading"))
+        assert result.zone_shortlist  # non-empty
+        for z in result.zone_shortlist:
+            assert z.last_verified, f"{z.zone_id} recommendation missing last_verified"
+
 
 # --------------------------------------------------------------------------- #
 # Mainland vs Free Zone decision
