@@ -1,0 +1,4 @@
+# Dev/test dependencies for the deterministic engine.
+# The engine itself has ZERO runtime dependencies (stdlib only) — this keeps the
+# core hallucination-defense logic trivially testable and portable.
+pytest>=7.4

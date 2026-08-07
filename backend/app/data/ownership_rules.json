@@ -1,0 +1,30 @@
+{
+  "_meta": {
+    "description": "Foreign ownership rules used by the deterministic engine to assess whether a business can achieve 100% foreign ownership on the mainland, and where a free zone remains the safer route.",
+    "last_reviewed": "2026-01",
+    "disclaimer": "Directional only. The 2021 Commercial Companies Law reform allows 100% foreign ownership for most mainland commercial and industrial activities, but each emirate's DED publishes its own 'positive list' and a residual set of strategic-impact activities still require Emirati involvement. Confirm the specific activity against the relevant DED positive list."
+  },
+  "rules": {
+    "free_zone_always_100_percent": {
+      "value": true,
+      "explanation": "All UAE free zones allow 100% foreign ownership by design. This has always been a core free-zone benefit.",
+      "source": "UAE free zone company law (standard across zones)"
+    },
+    "mainland_default_since_2021": {
+      "value": true,
+      "explanation": "Since the June 2021 Commercial Companies Law reform, most mainland commercial and industrial activities allow 100% foreign ownership with no mandatory Emirati shareholder.",
+      "source": "Federal Decree-Law No. 26 of 2020 amending the Commercial Companies Law (effective 2021)"
+    },
+    "strategic_activities_still_restricted": {
+      "value": true,
+      "restricted_categories": ["oil_and_gas_upstream", "defense_and_military", "banking_and_insurance_onshore", "certain_utilities", "security_services", "hajj_umrah_services", "fisheries"],
+      "explanation": "A limited set of strategic-impact activities still require Emirati ownership or a local agent on the mainland. None of the MVP activity buckets fall squarely into these, but sector-specific checks are required for regulated finance, security, and resource sectors.",
+      "source": "UAE Cabinet strategic activities list under the 2021 reform"
+    },
+    "professional_licence_local_service_agent": {
+      "value": true,
+      "explanation": "Some mainland PROFESSIONAL (civil company) licences historically needed a Local Service Agent (LSA) — an Emirati sponsor paid a flat fee with no equity. Post-reform this is reduced but can still apply to specific professional activities; it does not dilute foreign ownership of profits.",
+      "source": "DED professional licence / Local Service Agent guidance"
+    }
+  }
+}
