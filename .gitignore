@@ -19,11 +19,16 @@ htmlcov/
 .env.*
 !.env.example
 
-# Node / frontend (added in a later milestone)
+# Node / frontend
 node_modules/
 frontend/dist/
 frontend/build/
 .next/
+
+# TS/Vite build artifacts (emitted by `tsc -b`)
+*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts
 
 # OS / editor
 .DS_Store
