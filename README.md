@@ -143,9 +143,12 @@ which path produced the text.
 
 ## Data accuracy
 
-Free-zone costs and visa caps are realistic **2025/2026 public-package bands** and are
-clearly marked approximate. They change often — verify against a live quote from the zone
-authority before relying on any figure. Corrections via PR are welcome.
+Free-zone costs and visa caps are **2026 public-package bands, cross-checked in August
+2026** against multiple business-setup consultancies and (where published) the zone
+authorities, with a dated `source` on every zone. They are still **approximate**: UAE
+free-zone pricing moves constantly and is sold mostly through agents, so bands overlap
+and promotions vary. Always confirm a live written quote with the zone authority before
+relying on any figure. Corrections via PR are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Contributing
 
