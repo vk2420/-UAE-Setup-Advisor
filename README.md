@@ -112,6 +112,34 @@ docker compose up --build
 
 Frontend on `http://localhost:8080`, backend on `http://localhost:8000`.
 
+## Deploy to Vercel (all-in-one)
+
+The repo is configured to deploy the **whole app on Vercel** — the React frontend as a
+static build and the FastAPI backend as a Python serverless function — from a single
+import, no config needed:
+
+1. Push to GitHub and **Import the repo** in Vercel (accept the detected settings;
+   [vercel.json](vercel.json) already sets the build command, output dir, the Python
+   function, and the `/api/*` rewrite).
+2. Deploy. The frontend is served at the root and calls `/api/*` on the same origin.
+
+Files that make this work:
+- [`api/index.py`](api/index.py) — re-exports the same FastAPI `app` for Vercel's Python runtime.
+- [`requirements.txt`](requirements.txt) — Python deps for the function (root).
+- [`vercel.json`](vercel.json) — build config, `includeFiles` for the JSON data, `/api/*` rewrite, `maxDuration`.
+
+**LLM layer on Vercel:** leave `ANTHROPIC_API_KEY` **unset** for a fast, free public
+demo — the deterministic explanation is instant and needs no key. To enable AI-written
+prose, add `ANTHROPIC_API_KEY` (and optionally `ANTHROPIC_MODEL`) as Vercel Environment
+Variables. Note serverless functions have a time limit (`maxDuration` is set to 60s), so
+a slow model call can hit it — the no-key path avoids this entirely.
+
+After the first deploy, sanity-check `https://<your-app>.vercel.app/api/health`.
+
+> Prefer a persistent backend (no cold starts)? The `backend/Dockerfile` runs as-is on
+> Railway / Render / Fly; point the Vercel frontend at it by setting
+> `VITE_API_BASE_URL` to that backend's URL at build time.
+
 ## The LLM explanation layer
 
 Entirely **optional** and **env-gated**:
