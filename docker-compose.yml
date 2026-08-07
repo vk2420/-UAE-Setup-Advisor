@@ -1,0 +1,25 @@
+# Run the whole app with: docker compose up --build
+# Backend on http://localhost:8000, frontend on http://localhost:8080.
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      # Optional: set to enable the LLM explanation layer. Without it, the app
+      # serves the deterministic template explanation.
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      ANTHROPIC_MODEL: ${ANTHROPIC_MODEL:-claude-opus-5}
+      # Allow the frontend origin to call the API.
+      CORS_ORIGINS: "http://localhost:8080"
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        # The browser talks to the backend directly, so point at the host port.
+        VITE_API_BASE_URL: "http://localhost:8000"
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
