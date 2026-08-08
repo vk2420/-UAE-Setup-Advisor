@@ -1,0 +1,7 @@
+# Python deps for the Vercel serverless function (api/index.py).
+# Vercel installs this at the repo root. uvicorn is intentionally omitted —
+# Vercel provides the ASGI server. anthropic is only used when ANTHROPIC_API_KEY
+# is set; without it the deterministic explanation is served.
+fastapi>=0.110
+pydantic>=2.6
+anthropic>=0.40

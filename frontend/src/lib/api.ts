@@ -1,8 +1,10 @@
 // Typed client for the UAE Setup Advisor API.
 
+// Default to same-origin ("") so production (Vercel) calls /api/* on the same
+// host. In local dev the Vite proxy forwards /api to the backend (see
+// vite.config.ts). Docker builds set VITE_API_BASE_URL to an absolute URL.
 const BASE_URL =
-  (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
-  "http://localhost:8000";
+  (import.meta.env.VITE_API_BASE_URL as string | undefined) ?? "";
 
 export type TargetMarket = "international" | "local_uae" | "both";
 
